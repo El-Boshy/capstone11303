@@ -1,0 +1,157 @@
+body{
+    margin: 8px;
+}
+
+.nav{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+
+    background-color: blanchedalmond;
+}
+
+.logo{
+    background-color: burlywood;
+    width: 75px;
+    height: 75px;
+    display: grid;
+}
+
+.tabs{
+    display: grid;
+}
+
+.l{
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+    justify-content: space-around;
+}
+
+#container{
+    /*display: flex;
+    justify-content: space-around;*/
+    position: relative;
+    top: 100px;
+    padding-bottom: 100px;
+    z-index: 0;
+}
+.specie{
+    display: grid;
+    grid-auto-columns: auto;
+    grid-template-rows: auto auto;
+    grid-column-gap: 20px;
+    /*justify-content: space-evenly;*/
+    min-height: 100px;
+    background-color: bisque;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.specie .title{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 20px;
+}
+.remove{
+    position: absolute;
+    transform: translate(-8px , -108px);
+    background-color: aliceblue;
+    width: 0px;
+    height: 0px;
+    overflow:hidden;
+    transition-property: width, height;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    text-align: center;
+}
+.remove:hover{
+    background-color:burlywood;
+}
+.col{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    
+}
+.col .title{
+    font-size: large;
+}
+.col .table{
+    
+    padding: 10px;
+    min-height: 100px;
+    background-color: coral;
+    
+}
+.col .table div{
+}
+.col input{
+    max-width: 150px;
+}
+
+
+
+
+
+
+
+.table_contain{
+    text-align: -webkit-center;
+}
+#Ph_level{
+    margin-top: 20px;
+    font-size: xx-large;
+    width: 250px;
+    height: 50px;
+    background-color: beige;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+#Ph_scale{
+    margin-top: 20px;
+    width: 250px;
+    height: 100px;
+    background-color: beige;
+    overflow: hidden;
+    vertical-align: middle;
+    position: relative;
+}
+#Ph_scale #arrow{
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    top: 0px;
+    left: 50%;
+    transform: rotateZ(180deg) translate(50%, 0px);
+}
+#Ph_scale img{
+    position: relative;
+    top: 10px;
+    width: 1120px;
+    left: 118.9px;
+    transition-property: left;
+    transition-duration: 1s;
+}
+
+.circle{
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    background-color: beige;
+}
+#CO2_level{
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
