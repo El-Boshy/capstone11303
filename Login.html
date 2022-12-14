@@ -3,7 +3,7 @@
     <header>
         <title>Data Insertion</title>
         <link rel="stylesheet" href="style.css">
-        <script src="insertion.js" type="module" defer></script>
+        <script src="Login.js" type="module" defer></script>
     </header>
 
     <body>
@@ -14,19 +14,25 @@
 
             <div class="tabs">
                 <ul class="l">
-                    <li onClick="">Home</li>
-                    <li onClick="window.location.assign('readings.html');">Readings</li>
-                    <li onClick="window.location.assign('analysis.html');">Analysis</li>
-                    <li onClick="window.location.assign('insertion.html');">Data Insertion</li>
+                    <li>Home</li>
+                    <li>Readings</li>
+                    <li>Analysis</li>
+                    <li>Data Insertion</li>
                 </ul>
             </div>
         </nav>
 
         <div id="container">
-            <div id="species">
+            <div class="specie">
+                <div class="title">Login page</div>
+                <div class="col">
+                    <h3>Enter your email address</h3>
+                    <input id="email" type="text" required>
+                    <h3>Enter your password</h3>
+                    <input id="password" type="password" required>
+                    <input id="submit" type="submit" value="Login">
+                </div>
             </div>
-            <hr>
-            <button id="ANS">Add new Species</button>
         </div>
     </body>
 

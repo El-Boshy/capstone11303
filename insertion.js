@@ -94,7 +94,7 @@ onSnapshot(query(TypesOfFish,orderBy("name","asc")),(snap)=>{
                     if(table.childElementCount > 0){
                         var count = table.childElementCount;
                         for(var i=0;i < count;i++){
-                            if(parseInt(text) < parseInt(table.children[i].textContent)){
+                            if(parseFloat(text) < parseFloat(table.children[i].textContent)){
                                 table.insertBefore(row,table.children[i]);
                                 return;
                             }else{
@@ -121,7 +121,7 @@ onSnapshot(query(TypesOfFish,orderBy("name","asc")),(snap)=>{
                     if(table.childElementCount > 0){
                         var count = table.childElementCount;
                         for(var i=0;i < count;i++){
-                            if(parseInt(text) < parseInt(table.children[i].textContent)){
+                            if(parseFloat(text) < parseFloat(table.children[i].textContent)){
                                 table.insertBefore(row,table.children[i]);
                                 return;
                             }else{

@@ -23,15 +23,18 @@ body{
     display: grid;
 }
 
-.tabs{
+.tabs .l{
     display: grid;
-}
-
-.l{
-    display: flex;
-    flex-direction: row;
     width: 450px;
-    justify-content: space-around;
+    grid-template-columns: 100px 100px 100px 100px;
+    margin: 0px;
+}
+.tabs .l li{
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
 }
 
 #container{
@@ -135,10 +138,11 @@ body{
 #Ph_scale img{
     position: relative;
     top: 10px;
-    width: 1120px;
-    left: 118.9px;
-    transition-property: left;
+    width: 1130px;
+    left: 119.5106px;
+    transition-property: transform;
     transition-duration: 1s;
+    transform: translate(0px);
 }
 
 .circle{
