@@ -25,16 +25,20 @@ body{
 
 .tabs .l{
     display: grid;
-    width: 450px;
     grid-template-columns: 100px 100px 100px 100px;
     margin: 0px;
+    padding: 0px;
+    text-align: center;
 }
 .tabs .l li{
-    height: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     font-size: large;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+.tabs .l li:hover{
+    background-color: hsl(56deg 100% 95%);
+    height: 110%;
 }
 
 #container{
@@ -158,4 +162,11 @@ body{
     justify-content: center;
     align-items: center;
     font-size: xx-large;
+}
+
+#OutputText{
+    width: 500px;
+    height: 100px;
+    margin: 20px;
+    font-size: large;
 }

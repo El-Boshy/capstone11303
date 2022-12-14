@@ -98,9 +98,11 @@ data.addColumn("number","Ph level");
         
         var x = epochToJsDate(timestamp);
         var y = Number (ph);
+        
         // Plot the values on the charts
         data.addRow([x, y]);
-        if(data.getNumberOfRows > chartRange){
+        
+        if(data.getNumberOfRows() > chartRange){
             data.removeRow(0);
         }
         
@@ -140,7 +142,7 @@ data.addColumn("number","CO2 level");
         var y = Number (co2);
         // Plot the values on the charts
         data.addRow([x, y]);
-        if(data.getNumberOfRows > chartRange){
+        if(data.getNumberOfRows() > chartRange){
             data.removeRow(0);
         }
         
