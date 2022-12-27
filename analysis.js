@@ -105,7 +105,7 @@ function Analysis_Chart() {
                 onChildAdded(query(readings,orderByKey(),limitToLast(1)),(current)=>{
                     var ph = Number(current.toJSON()["Ph level"]);
                     console.log(ph);
-                    Output.textContent += "";
+                    Output.textContent = "";
                     
                     var rateRef = collection(TypesOfFish,change.doc.id,"Survival rate");
                     var effectRef = collection(TypesOfFish,change.doc.id,"Effect");
