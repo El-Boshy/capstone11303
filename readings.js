@@ -26,27 +26,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 
-/*
-//Initialize appCheck
-const appCheck = initializeAppCheck(app, {
-    provider: new ReCaptchaV3Provider('6LeqAzEjAAAAAFt0GCgYsA4l1W9bgYjvZdLIvZCo'),
-
-    // Optional argument. If true, the SDK automatically refreshes App Check
-    // tokens as needed.
-    isTokenAutoRefreshEnabled: true
-});
-*/
-
 // Initiate the Database to access the documents
 const db = getDatabase(app);
 const auth = getAuth(app);
-/*
-if(auth.currentUser == null){
-    console.log("Login please");
-    window.location.replace("Login.html");
-}
-console.log(auth.currentUser);
-*/
 
 
 
@@ -78,7 +60,7 @@ function Ph_Chart() {
 
 var options = {
   //title: 'Ph level',
-    vAxis: {title: "Ph level" },
+    vAxis: {title: "pH level" },
     curveType: 'function',
     legend: { position: 'bottom' },
     animation: {duration: 300, easing: "out"}
@@ -87,7 +69,7 @@ var options = {
 var chart = new google.visualization.LineChart(document.getElementById('Ph_chart'));
 var data = new google.visualization.DataTable();
 data.addColumn("date","Date");
-data.addColumn("number","Ph level");
+data.addColumn("number","pH level");
     
     var q = query(dbRef, orderByKey(), limitToLast(chartRange));
     onChildAdded(q, snapshot =>{
@@ -155,7 +137,7 @@ data.addColumn("number","CO2 level");
     });
 }
 let SetPh = (level) =>{
-    document.getElementById("Ph_level").textContent = "Ph level: " + level;
+    document.getElementById("Ph_level").textContent = "pH level: " + level;
     document.getElementById("Ph_scale").getElementsByTagName("img")[0].style.transform = `translate(${-7.942857 * 10  * level}px)`;
 }
 let SetCO2 = (level) =>{

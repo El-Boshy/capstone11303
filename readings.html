@@ -10,7 +10,7 @@
     <body>
         <nav class="nav">
             <div class="logo">
-                <img src="#" alt="logo">
+                <img src="logo.png" alt="logo">
             </div>
 
             <div class="tabs">
@@ -21,12 +21,20 @@
                     <li onClick="window.location.assign('insertion.html');">Data Insertion</li>
                 </ul>
             </div>
+            <div class="contacts">
+                <a href="#"><img id="email" src="icons/icons8-mail-50.png"></a>
+                <a href="#"><img id="facebook" src="icons/icons8-facebook-48.png"></a>
+                <a href="#"><img id="whatsapp" src="icons/icons8-whatsapp-48.png"></a>
+                <a href="#"><img id="linkedin" src="icons/icons8-linkedin-circled-48.png"></a>
+                <a href="#"><img id="instagram" src="icons/icons8-instagram-100.png"></a>
+                
+            </div>
         </nav>
 
         <div id="container">
             <div class="specie">
                 <div class="col table_contain">
-                    <div class="title">Ph readings</div>
+                    <div class="title">pH readings</div>
                     <div id="Ph_chart" style="width: 600px; height: 400px"></div>
                     <div id="Ph_level">0</div>
                     <div id="Ph_scale">
@@ -34,8 +42,9 @@
                         <img id="arrow" src="pngwing.com.png">
                     </div>
                 </div>
+                
                 <div class="col table_contain">
-                    <div class="title">CO2 readings</div>
+                    <div class="title">CO<sub>2</sub> readings</div>
                     <div id="CO2_chart" style="width: 600px; height: 400px"></div>
                     <div class="circle">
                         <div id="CO2_level">0 <br> ppm</div>
@@ -47,15 +56,3 @@
 
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LeqAzEjAAAAAFt0GCgYsA4l1W9bgYjvZdLIvZCo"></script>
-
-    <script>/*
-        function onClick(e) {
-            e.preventDefault();
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LeqAzEjAAAAAFt0GCgYsA4l1W9bgYjvZdLIvZCo', {action: 'submit'}).then(function(token) {
-                    // Add your logic to submit to your backend server here.
-                    //const apiResponse = await fetch("");
-                });
-            });
-        }*/
-    </script>

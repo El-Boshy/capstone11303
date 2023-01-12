@@ -26,30 +26,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 
-/*
-//Initialize appCheck
-const appCheck = initializeAppCheck(app, {
-    provider: new ReCaptchaV3Provider('6LeqAzEjAAAAAFt0GCgYsA4l1W9bgYjvZdLIvZCo'),
-
-    // Optional argument. If true, the SDK automatically refreshes App Check
-    // tokens as needed.
-    isTokenAutoRefreshEnabled: true
-});
-*/
-
 var Output = document.getElementById("OutputText");
 
 // Initiate the Database to access the documents
 const db = getDatabase(app);
 const fs = getFirestore(app);
 const auth = getAuth(app);
-/*
-if(auth.currentUser == null){
-    console.log("Login please");
-    window.location.replace("Login.html");
-}
-console.log(auth.currentUser);
-*/
 
 const TypesOfFish = collection(fs,"Fish_Types");
 const readings = ref(db,"/UsersData/AZ7gry0F88TucQpBbTwO9oSAA4i1/readings");
@@ -62,25 +44,7 @@ SetPh(json["Ph level"].toFixed(2));
 });
 
 
-// Get the reference of the user document
-//const parent = ref(db,"/UsersData/" + uid + "/readings");
-
-
-
-
-
-
 function Analysis_Chart() {
-    /*
-    var data = google.visualization.arrayToDataTable([
-      ["Specie", "Survival rate", {role: "style"}],
-      ['A',  10.00, "#fa1058"],
-      ['B',  11.70, "#04fa48"],
-      ['C',  6.60, "#0442aa"],
-      ['D',  10.30, "#0f0a4a"],
-      ['E',  10.30, "#468138"]
-    ]);
-*/
     var options = {
         vAxis: {title: 'Survival rate (%)', viewWindow: {max: 100, min: 0}},
         hAxis: {title: 'Fish species'},
@@ -104,7 +68,7 @@ function Analysis_Chart() {
                 
                 onChildAdded(query(readings,orderByKey(),limitToLast(1)),(current)=>{
                     var ph = Number(current.toJSON()["Ph level"]);
-                    console.log(ph);
+                    
                     Output.textContent = "";
                     
                     var rateRef = collection(TypesOfFish,change.doc.id,"Survival rate");
@@ -143,32 +107,26 @@ function Analysis_Chart() {
                         });
                     });
                 });
-                //
                 
-                //var ph = phReading.currentPh;
-                //console.log(ph);
-                //getDocs(rateRef).then(snap=>{
-                //    console.log(snap.docs[0].get("value"));
-                //});
-                
-            }
     });
     });
 }
 
 const getColor = (text) =>{
-    if(text == "Acidic death point"){
+    if(text == "Acidic death point" || text == "acidic death point"){
         return "#D82E3F";
-    }else if(text == "No reproduction"){
+    }else if(text == "No reproduction" || text == "no reproduction"){
         //return "#3581D8";
         return "#808080";
-    }else if(text == "Slow growth"){
+    }else if(text == "Slow growth" || text == "slow growth"){
         return "#FFE135";
-    }else if(text == "Optimal growth"){
+    }else if(text == "Optimal growth" || text == "optimal growth"){
         return "#28CC2D";
+    }else if(text == "Alkaline death point" || text == "alkaline death point"){
+        return "#185abc";
     }
 }
 
 const SetPh = (level) =>{
-    document.getElementById("Ph_level").textContent = "Ph level: " + level;
+    document.getElementById("Ph_level").textContent = "pH level: " + level;
 }

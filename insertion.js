@@ -47,6 +47,8 @@ document.getElementById("ANS").addEventListener("click",(event)=>{
     }
     alert("Enter a valid name");
 });
+
+
 // Add an event listener to any change in the database 
 //const q = query(TypesOfFish,orderBy("name","asc"));
 onSnapshot(query(TypesOfFish,orderBy("name","asc")),(snap)=>{
@@ -62,24 +64,7 @@ onSnapshot(query(TypesOfFish,orderBy("name","asc")),(snap)=>{
             
             specie.appendChild(col1); //add the column
             specie.appendChild(col2); //add the coulumn
-            /*
-            var cont = true;
-            if(species.childElementCount > 0){
-                var count = species.childElementCount;
-                for(var i=0;i < count && cont;i++){
-                    if(specie.getElementsByClassName("title")[0].textContent.localeCompare(species.children[i].getElementsByClassName("title").textContent)==-1){
-                        species.insertBefore(specie,species.children[i]);
-                        cont = false;
-                    }else{
-                        if(i == count - 1){
-                            species.appendChild(specie);
-                        }
-                    }
-                }
-            }else{
-                species.appendChild(specie);
-            }
-            */
+            
             let specieRef = species.appendChild(specie); // add the Specie block to the Species block
             
             // Get a reference to the subcollection Effect
@@ -91,6 +76,8 @@ onSnapshot(query(TypesOfFish,orderBy("name","asc")),(snap)=>{
                     let row = document.createElement("div");
                     let text = change2.doc.get("min") + " ~ " + change2.doc.get("max") + ": " + change2.doc.get("value");
                     row.textContent = text;
+                        
+                    //arrange the values
                     if(table.childElementCount > 0){
                         var count = table.childElementCount;
                         for(var i=0;i < count;i++){
@@ -118,6 +105,7 @@ onSnapshot(query(TypesOfFish,orderBy("name","asc")),(snap)=>{
                     let row = document.createElement("div");
                     let text = change2.doc.get("min") + " ~ " + change2.doc.get("max") + ": " + change2.doc.get("value") + "%";
                     row.textContent = text;
+                        
                     if(table.childElementCount > 0){
                         var count = table.childElementCount;
                         for(var i=0;i < count;i++){
@@ -171,7 +159,7 @@ let createSpecie = (documentRef) =>{
         remove.style.top = event.pageY + "px";
         remove.style.left = event.pageX + "px";
         remove.style.width = "100px";
-        remove.style.height = "30px";
+        remove.style.height = "40px";
 
     });
     // Add an event listener to disappear the remove button when the mouse is clicked away
@@ -219,7 +207,7 @@ let createCol = (documentRef, ID, number=false) =>{
     if(number){
         Input3.setAttribute("type", "number");
     }else{
-        Input3.setAttribute("type", "text");
+        Input3.setAttribute("type", "option");
     }
     
     Input3.setAttribute("placeholder","Enter the " + ID);
