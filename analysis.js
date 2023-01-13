@@ -107,8 +107,8 @@ function Analysis_Chart() {
                         });
                     });
                 });
-                
-    });
+            }
+        });
     });
 }
 
